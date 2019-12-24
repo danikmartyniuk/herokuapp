@@ -17,7 +17,7 @@ public class HerokuappTest {
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
         driver.findElement(By.tagName("button")).click();
         driver.findElement(By.tagName("button")).click();
-        driver.findElement(By.className("added-manually")).click();
+        driver.findElements(By.className("added-manually")).get(0).click();
         int numberOfDeleteButtons = driver.findElements(By.className("added-manually")).size();
         assertEquals(numberOfDeleteButtons, 1, "Number of elements is not correct");
         driver.quit();
